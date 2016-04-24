@@ -4,11 +4,14 @@
   </head>
   <body>
     <div>
-      <h1>Sailing the Salish Sea</h1>
-
-      <h2>Classes</h2>
-      <h3><a href="">Cruise Planning</a></h3>
+    <h1>Sailing the Salish Sea</h1>
     </div>
-    <p>There are courses available in the area.</p>
+    {% for post in posts %}
+      <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaks }}</p>
+      </div>
+    {% endfor %}
   </body>
 </html>
